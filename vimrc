@@ -60,6 +60,17 @@ set statusline=set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{
 set mouse=a 		" 开启鼠标支持
 set tags+=/usr/include/tags
 						" taglist configure
+if has("multi_byte")
+    "utf-8编码
+    set encoding=utf-8
+    set fileencodings=utf-8,gbk,big5
+    set formatoptions+=mM
+    if v:lang =~? '^\(zh\)\|\(ja\)\|\(ko\)'
+	set ambiwidth=double
+    endif
+else
+    echoerr "Sorry, this version of (g)vim was not compiled with +multi_byte"
+endif 			" 配置多语言环境
 set foldenable          " 开启折叠
 set foldmethod=manual   " manual : Folds are created manually.
                         " indent : Lines with equal indent form a fold.
