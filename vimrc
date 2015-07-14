@@ -55,7 +55,7 @@ set nowrapscan		" 禁止在搜索到文件两端时重新搜索
 set ignorecase smartcase
 			" 搜索时忽略大小写，但在有一个或以上大写字母时仍保持对大小写敏感
 set laststatus=2	" 显示状态行
-set statusline=set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:%l/%L%)\
+set statusline=set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&fileencoding}\ %c:%l/%L%)\
 			" 设置在状态栏显示的信息
 set mouse=a 		" 开启鼠标支持
 set tags+=/usr/include/tags
