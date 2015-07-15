@@ -58,6 +58,8 @@ set laststatus=2	" 显示状态行
 set statusline=set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&fileencoding}\ %c:%l/%L%)\
 			" 设置在状态栏显示的信息
 set mouse=a 		" 开启鼠标支持
+set tags=tags;		" 递归向上查找tags
+set autochdir		" 自动将正在编辑文件的路径设置为vim的工作目录，配合set tags=tags可以实现递归
 set tags+=/usr/include/tags
 						" taglist configure
 if has("multi_byte")
