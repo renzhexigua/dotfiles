@@ -46,6 +46,7 @@ syntax on               " 自动语法高亮
 set number		" 行号
 set numberwidth=1	" 行号缩进
 set shiftwidth=4        " 代码自动缩进长度
+set tabstop=4		" 设定tab长度为4
 set showmatch		" 显示括号匹配（光标会回溯到前者）
 set ruler               " 右下角光标位置显示
 set cursorline          " 当前行下划线显示
@@ -124,5 +125,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 						" 当vim不指定文件打开时，自动开启nerdtree目录树(2 lines directive)
 autocmd FileType python  :iabbrev <buffer> iff if:<left>
 						" insert模式： 编辑py文件iff缩写
+autocmd FileType python set tabstop=4 shiftwidth=4 expandtab
+						" python文件，将tab替换为空格
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
 						" 如果仅剩nerdtree窗口打开，:q时直接退出vim
